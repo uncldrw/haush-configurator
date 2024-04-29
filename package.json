@@ -1,0 +1,36 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "@shopify/shopify-api": "^9.7.2",
+    "@shopify/storefront-api-client": "^0.3.3",
+    "nuxt": "^3.11.2",
+    "nuxt-swiper": "^1.2.2",
+    "pinia": "^2.1.7",
+    "primevue": "^3.51.0",
+    "shopify-buy": "^2.21.1",
+    "swiper": "^11.1.1",
+    "vue": "^3.4.21",
+    "vue-final-modal": "^4.5.4",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.7.4",
+    "@iconify/json": "^2.2.202",
+    "autoprefixer": "^10.4.19",
+    "nuxt-primevue": "^0.3.1",
+    "postcss": "^8.4.38",
+    "sass": "^1.75.0",
+    "sass-loader": "^14.2.1",
+    "tailwindcss": "^3.4.3"
+  }
+}
