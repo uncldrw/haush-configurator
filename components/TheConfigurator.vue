@@ -2,7 +2,7 @@
 import TheImageViewer from "./TheImageViewer.vue";
 
 const builderStore = useBuilderStore();
-const options = builderStore.options;
+const options = builderStore.data;
 onMounted(async () => {});
 </script>
 <template>

@@ -11,33 +11,39 @@ const client = createStorefrontApiClient({
 });
 
 const query = `
-query ($id: ID!) {
-    product(id: $id) {
-      images(first: 100) {
-        edges {
-          node {
-            src
-          }
-        }
-      }
-      variants(first: 100) {
-        edges {
-          node {
-            id
-            title
-            image {
-              originalSrc
+query {
+  products(first: 10) {
+    edges {
+      node {
+        id
+        title
+        images(first: 5) {
+          edges {
+            node {
+              src
             }
           }
         }
-      }
-      options {
-        id
-        name
-        values
+        variants(first: 5) {
+          edges {
+            node {
+              id
+              title
+              image {
+                originalSrc
+              }
+            }
+          }
+        }
+        options(first: 5) {
+          id
+          name
+          values
+        }
       }
     }
   }
+}
 `;
 
 export const useBuilderStore = defineStore("builder", {
@@ -86,7 +92,7 @@ export const useBuilderStore = defineStore("builder", {
             id: "gid://shopify/Product/9000783380823",
           },
         })
-      ).data;
+      ).data.products.edges;
     },
   },
 });
