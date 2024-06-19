@@ -1,6 +1,5 @@
 <template>
   <ModalsContainer />
-  <DummyHeader />
   <div class="md:flex">
     <TheConfigurator />
   </div>

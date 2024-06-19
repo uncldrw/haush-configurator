@@ -46,7 +46,7 @@ onMounted(() => {
 <style lang="scss">
 section.step-item {
   .step-card {
-    @apply bg-white rounded-lg p-3 grid gap-8 overflow-hidden;
+    @apply bg-white rounded-[15.8687px] px-4 py-3 grid gap-8 overflow-hidden;
 
     & > [data-pc-name="accordion"] {
       & > [data-pc-name="accordiontab"] {
