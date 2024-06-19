@@ -11,33 +11,32 @@ const client = createStorefrontApiClient({
 });
 
 const query = `
-query ($id: ID!) {
-    product(id: $id) {
-      images(first: 100) {
-        edges {
-          node {
-            src
+query {
+  products(first: 100) {
+    edges {
+      node {
+        id
+        title
+        description
+        images(first: 1) {
+          edges {
+            node {
+              url
+            }
           }
         }
-      }
-      variants(first: 100) {
-        edges {
-          node {
-            id
-            title
-            image {
-              originalSrc
+        variants(first: 100) {
+          edges {
+            node {
+              id
+              title
             }
           }
         }
       }
-      options {
-        id
-        name
-        values
-      }
     }
   }
+}
 `;
 
 export const useBuilderStore = defineStore("builder", {
