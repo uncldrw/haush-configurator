@@ -16,11 +16,15 @@ const isSelected = (i) => {
 const infoHandler = (i) => {
   console.log("infoHandler", i);
 };
+
+const formatShopifyId = (id) => {
+  return id.replace("gid://", "");
+};
 </script>
 
 <template>
   <div class="card-ctn grid-ctn">
-    <div class="grid grid-cols-2 gap-2 py-4 px-2 sm:grid-cols-3 md:grid-cols-4">
+    <div class="grid grid-cols-2 gap-2 py-4 px-2 sm:grid-cols-3 md:grid-cols-2">
       <div
         class="color-item"
         v-for="(o, index) in options"
@@ -31,12 +35,12 @@ const infoHandler = (i) => {
             <img
               draggable="false"
               class="h-full w-full object-cover select-none"
-              :src="`shopify/${o}.png`"
+              :src="`${formatShopifyId(o.node.id)}.png`"
               alt=""
             />
           </div>
           <div class="color-heading-ctn">
-            <p class="text flex-1">{{ o }}</p>
+            <p class="text flex-1">{{ o.node.title }}</p>
             <span class="icon" @click.stop="infoHandler(index)"></span>
           </div>
         </div>

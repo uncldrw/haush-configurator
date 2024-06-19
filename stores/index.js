@@ -85,7 +85,7 @@ export const useBuilderStore = defineStore("builder", {
             id: "gid://shopify/Product/9000783380823",
           },
         })
-      ).data;
+      ).data.products.edges;
     },
   },
 });

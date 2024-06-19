@@ -32,10 +32,10 @@ onMounted(() => {
         <AccordionTab :pt="{ transition: animAccordion }" ref="accordionRefs">
           <template #header
             ><h3 class="title">
-              <span>{{ option.name }}</span>
+              <span>{{ option.node.title }}</span>
             </h3></template
           >
-          <SelectorGrid :options="option.values" />
+          <SelectorGrid :options="option.node.variants.edges" />
           <!-- <SelectorAccordion /> -->
         </AccordionTab>
       </Accordion>
