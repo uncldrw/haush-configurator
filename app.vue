@@ -1,4 +1,5 @@
 <template>
+  <SelectorPoolType />
   <ModalsContainer />
   <div class="md:flex">
     <TheConfigurator />

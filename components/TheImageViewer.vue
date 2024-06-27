@@ -23,9 +23,9 @@ const { open } = useModal({
 
 <style lang="scss" scoped>
 .image-ctn {
-  @apply relative top-0 z-10 w-full;
+  @apply sticky top-0 z-10 w-full;
   .image-wrapper {
-    @apply sticky max-h-[38rem] overflow-hidden md:ml-2 md:my-2 md:rounded top-0;
+    @apply sticky max-h-[38rem] overflow-hidden md:rounded top-0;
   }
 }
 

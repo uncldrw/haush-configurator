@@ -39,11 +39,33 @@ query {
 }
 `;
 
+const allColections = `
+query {
+  collections(first: 100) {
+    edges {
+      node {
+        id
+        title
+        description
+        handle
+        image {
+          src
+          altText
+        }
+      }
+    }
+  }
+}
+`;
+
+const availableCollections = ["lucky", "oval"];
+
 export const useBuilderStore = defineStore("builder", {
   state: () => {
     return {
       data: {},
       selectedOptions: [],
+      collections: [],
     };
   },
   getters: {
@@ -59,6 +81,10 @@ export const useBuilderStore = defineStore("builder", {
       );
     },
     selectedVariant: (getters) => getters.matchingVariants[0]?.node,
+    filteredCollections: (state) =>
+      state.collections.filter((collection) =>
+        availableCollections.includes(collection.node.handle)
+      ),
   },
   actions: {
     toggleOption(option, category) {
@@ -79,11 +105,18 @@ export const useBuilderStore = defineStore("builder", {
       );
     },
     async fetchGraphQLData() {
+      this.collections = (
+        await client.request(allColections, {
+          // variables: {
+          //   id: "gid://shopify/Product/9000783380823",
+          // },
+        })
+      ).data.collections.edges;
       this.data = (
         await client.request(query, {
-          variables: {
-            id: "gid://shopify/Product/9000783380823",
-          },
+          // variables: {
+          //   id: "gid://shopify/Product/9000783380823",
+          // },
         })
       ).data.products.edges;
     },

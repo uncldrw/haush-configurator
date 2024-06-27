@@ -22,6 +22,7 @@ defineProps({
   padding-top: 18.084px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
+  max-height: 60px;
 }
 
 .ButtonInputLabel {

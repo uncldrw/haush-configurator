@@ -53,6 +53,7 @@ section.step-item {
         & > [data-pc-section="header"] {
           & > a {
             @apply flex items-center flex-row-reverse justify-between rounded py-3 px-1;
+
             .title {
               span {
                 @apply text-2xl px-1 inline leading-[0];
